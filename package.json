@@ -1,0 +1,22 @@
+{
+  "name": "gustavo-ng-website",
+  "version": "1.0.0",
+  "description": "Personal website for Gustavo Ng showcasing projects and professional background.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process not defined'",
+    "test": "echo 'No tests defined'"
+  },
+  "keywords": [
+    "Gustavo Ng",
+    "personal website",
+    "portfolio"
+  ],
+  "author": "Gustavo Ng",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

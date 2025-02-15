@@ -23,4 +23,22 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
+    const navToggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('nav');
+
+    navToggle.addEventListener('click', function(event) {
+        event.stopPropagation();
+        if (nav.style.right === '0px') {
+            nav.style.right = '-250px';
+        } else {
+            nav.style.right = '0px';
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!nav.contains(event.target) && !navToggle.contains(event.target)) {
+            nav.style.right = '-250px';
+        }
+    });
 });
