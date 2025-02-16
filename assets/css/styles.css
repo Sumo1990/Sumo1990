@@ -161,14 +161,6 @@ main {
     }
 }
 
-/* Estilos del encabezado */
-.libros {
-    font-size: 36px; /* Tamaño más grande para el h2 */
-    margin: 40px 0 70px 0; /* Espacio debajo del h2 */
-    text-align: center; /* Alinear a la izquierda */
-    color: rgb(0, 0, 0);
-}
-
 .container {
     width: 80%;
     margin: 0 auto;
@@ -187,19 +179,82 @@ main {
     align-items: center;
     flex-direction: row; /* Asegurar que los elementos estén en fila */
 }
-.cont-libros {
+.libros {
+    font-size: 36px; /* Tamaño más grande para el h2 */
+    margin: 40px 0 70px 0; /* Espacio debajo del h2 */
+    text-align: center; /* Alinear a la izquierda */
+    color: rgb(0, 0, 0);
+}
+.cont-libros, .cont-fotos  {
     display: flex;
     flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
     justify-content: center; /* Centrar los elementos dentro del contenedor */
     margin: 50px;
 }
-a {
+.cont-libros a { 
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
+    justify-content: center; /* Centrar los elementos dentro del contenedor */
     margin: 20px;
 }
-.logo {
+.cont-libros1 {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
+    justify-content: left; /* Centrar los elementos dentro del contenedor */
+    margin: 20px;
+}
+.fotos {
+    vertical-align: text-top;
+}
+.cont-fotos a {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
+    justify-content: left; /* Centrar los elementos dentro del contenedor */
+    margin: 20px;
+}   
+.book-image-descrip {
+    float: left;
+    width: 300px; /* Tamaño más pequeño para la imagen */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    margin: -30px 30px 30px 30px;
+   
+}
+.book {
+    text-align: center; /* Centrar el contenido */
+    margin-bottom: 20px; /* Espacio debajo del contenedor */
+}
+
+/* Estilos de la imagen del libro */
+.book-image, .fotos {
+    width: 200px; /* Tamaño más pequeño para la imagen */
+    height: auto;
+    display: block; /* Asegura que la imagen sea un bloque */
+    margin: 0 auto 10px auto; /* Centrar la imagen y espacio debajo */
+    border-radius: 10px; /* Bordes redondeados */
+}
+.book-image-1 {
+    width: 300px; /* Tamaño más pequeño para la imagen */
+    height: auto;
+    display: block; /* Asegura que la imagen sea un bloque */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-left: 30px;
+}
+.libros-descrip  {
+    font-size: 20px; 
+    margin: 50px 30px 30px 30px;
+    text-align: left; /* Alinear a la izquierda */
+    
+    
+}
+.parrafo-index {
+    font-size: 20px; /* Tamaño más grande para el h2 */
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 200px; /* Espacio debajo del h2 */
+    text-align: left; /* Alinear a la izquierda */
+    display: flex;
+    align-items: center;
 }
 
 .logo h1 {
@@ -311,15 +366,7 @@ h2 {
     text-align: left; /* Alinear a la izquierda */
     display: flex;
     align-items: center;
-}
-.parrafo-index {
-    font-size: 20px; /* Tamaño más grande para el h2 */
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 200px; /* Espacio debajo del h2 */
-    text-align: left; /* Alinear a la izquierda */
-    display: flex;
-    align-items: center;
+    
 }
 
 /* Estilos del formulario de contacto */
@@ -390,55 +437,52 @@ button:hover {
 footer {
     background-color: rgba(51, 51, 51, 0.564); /* Fondo semi-transparente */
     color: #fff;
-    padding: 10px 0;
     text-align: center;
     margin-bottom: 0;
     margin-top: 0; /* Empuja el footer hacia la parte inferior */
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5); /* Desenfoque en el borde superior */
     width: 100%;
     flex-shrink: 0; /* Evita que el footer se expanda */
-}
-.footer {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    text-align: center;
-}
-
-.footer-content p {
-    font-size: 14px;
-    color: #ccc;
+    display: flex; /* Usar flexbox para alinear los elementos */
+    justify-content: center; /* Centrar el contenido */
+    align-items: center; /* Alinear verticalmente los elementos */
+    position: relative; /* Permitir posicionamiento absoluto de .linkredes */
 }
 
 .footer-content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-align: center; /* Asegurar que el texto esté centrado */
-    justify-content: center; /* Asegurar que los elementos estén centrados */
+    justify-content: center; /* Centrar el contenido */
+    width: 100%; /* Asegurar que el contenedor ocupe todo el ancho */
+    
 }
 
-.footer-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.footer-content p {
+    font-size: 14px;
+    color: #ccc;
+    
+}
+
+.footer {
     display: flex;
     justify-content: center;
-}
+    align-items: center;
+    margin: 0 auto;
 
-.footer-links li {
-    margin-left: 20px;
 }
-
-.footer-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
+.redes-links {
+    width: max-content;
+    float: right;
+    margin-left: 0;
+    margin-right: 25px;
+    
 }
-
-.footer-links li a:hover {
-    text-decoration: underline;
+.linkredes {
+    width: 40px;
+    position: relative;
+    margin-left: auto;
+    margin: 5px;    
 }
 
 .img-presentacion {
@@ -452,32 +496,11 @@ footer {
     opacity: 0.8; /* Opacidad del 80% */
 }
 
-.book {
-    text-align: center; /* Centrar el contenido */
-    margin-bottom: 20px; /* Espacio debajo del contenedor */
-}
-
-/* Estilos de la imagen del libro */
-.book-image {
-    width: 200px; /* Tamaño más pequeño para la imagen */
-    height: auto;
-    display: block; /* Asegura que la imagen sea un bloque */
-    margin: 0 auto 10px auto; /* Centrar la imagen y espacio debajo */
-    border-radius: 10px; /* Bordes redondeados */
-}
-.book-image-1 {
-    width: 300px; /* Tamaño más pequeño para la imagen */
-    height: auto;
-    display: block; /* Asegura que la imagen sea un bloque */
-    border-radius: 10px; /* Bordes redondeados */
-    margin-left: 30px;
-}
 
 .content {
     display: flex;
     align-items: flex-start;
 }
-
 .image-container {
     margin-right: 20px;
 }
@@ -490,8 +513,9 @@ footer {
 /* Media Queries para diseño responsivo */
 @media (max-width: 768px) {
     .container, .container1 {
-        width: 90%;
+        width: 100%; /* Asegurar que el contenedor tenga un ancho del 100% */
         flex-direction: column;
+        padding: 0 10px; /* Añadir padding para evitar que el contenido se pegue a los bordes */
     }
 
     .nav-toggle {
@@ -528,9 +552,17 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+
+    .intro {
+        top: 30%; /* Ajusta para pantallas más pequeñas */
+    }
 }
 
 @media (max-width: 480px) {
+    .intro {
+        top: 25%; /* Más arriba en pantallas muy pequeñas */
+    }
+
     .titulo-1 {
         font-size: 28px;
         margin: 30px 0;
@@ -562,5 +594,27 @@ footer {
         justify-content: center;
         align-items: center;
         margin-top: 15px;
+    }
+
+    /* Ajustes específicos para la pantalla de inicio */
+    .intro-wrapper {
+        padding: 20px; /* Añadir padding para evitar que el contenido se pegue a los bordes */
+    }
+
+    .intro-title {
+        font-size: 36px; /* Reducir el tamaño del título en pantallas pequeñas */
+    }
+
+    .intro-subtitle {
+        font-size: 18px; /* Reducir el tamaño del subtítulo en pantallas pequeñas */
+        margin: 40px 0 0 0; /* Ajustar el margen superior */
+    }
+
+    .barras {
+        width: 80%; /* Ajustar el ancho de las barras en pantallas pequeñas */
+    }
+
+    .barras.barras-top, .barras.barras-bottom {
+        transform: none; /* Eliminar la transformación en pantallas pequeñas */
     }
 }
