@@ -1,0 +1,560 @@
+/* Estilos generales del cuerpo */
+body {
+    height: 100%; /* Asegura que la altura de la página sea 100% */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    font-weight: bold;
+}
+
+/* Contenedor de la imagen de fondo con superposición */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/fondo-acuarela-estilo-chino_52683-96100.jpg"); /* Ruta a tu imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    z-index: -1; /* Coloca el contenedor detrás del contenido principal */
+    background-color: rgba(175, 175, 175, 0.093); /* Color negro con opacidad del 50% */
+    opacity: 0.4;
+}
+
+/* Asegúrate de que el contenido esté por encima del overlay */
+.intro-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    z-index: 1; /* Asegura que el contenido esté por encima del overlay */
+}
+main {
+    flex: 1;
+}
+
+/* Estilos de la animación de introducción */
+.intro {
+    text-align: center;
+    color: #818181;
+    animation: fadeIn 2s ease-in-out;
+    position: absolute; /* Fija el div en su lugar */
+    top: 30%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajusta la posición para que quede exactamente centrado */
+}
+
+.intro-title {
+    font-size: 70px;
+    margin: 20 0;
+    position: relative;
+    justify-content: center;
+}
+
+.barras {
+   
+    position: absolute;
+    width: 600px;
+    height: 3px;
+    background-color: #818181;
+    justify-content: center;
+    margin: 50 0;
+    opacity: 0.5;
+   
+}
+.barras.barras-top {
+    transform: translate(1.5%);
+    animation: slideInFromRight 2s ease-in-out forwards; /* Animación para la barra superior */
+}
+
+.barras.barras-bottom {
+    transform: translate(-1.5%);
+    animation: slideInFromLeft 2s ease-in-out forwards; /* Animación para la barra inferior */
+}
+
+
+.intro-title::before {
+    left: -60px;
+}
+
+.intro-title::after {
+    right: -60px;
+}
+
+.intro-subtitle {
+    animation: fadeInSubtitle 2s ease-in-out 2s forwards; /* Animación para el subtítulo */; 
+    font-size: 32px;
+    margin: 80px 0 0 0;
+    position: relative;
+    visibility: hidden; /* Oculta el subtítulo inicialmente */
+    opacity: 0;
+}
+
+.intro-subtitle::before,
+.intro-subtitle::after {
+    content: '|';
+    margin: 0 10px;
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animación para crecer el título */
+@keyframes growTitle {
+    from {
+        font-size: 20px;
+    }
+    to {
+        font-size: 70px;
+    }
+}
+
+/* Animación para deslizar la barra superior desde la derecha */
+@keyframes slideInFromRight {
+    from {
+        width: 0;
+        right: 0;
+    }
+    to {
+        width: 600px;
+        right: 0;
+    }
+}
+
+/* Animación para deslizar la barra inferior desde la izquierda */
+@keyframes slideInFromLeft {
+    from {
+        width: 0;
+        left: 0;
+    }
+    to {
+        width: 600px;
+        left: 0;
+    }
+}
+
+/* Animación para el subtítulo */
+@keyframes fadeInSubtitle {
+    0% {
+        opacity: 0;
+        visibility: visible; /* Hace visible el subtítulo al comenzar la animación */
+    }
+    99% {
+        opacity: 1;
+        visibility: visible; /* Asegura que el subtítulo permanezca visible durante la animación */
+    }
+    100% {
+        opacity: 1;
+        visibility: visible; /* Asegura que el subtítulo permanezca visible después de la animación */
+    }
+
+}
+
+
+/* Estilos del encabezado */
+.libros {
+    font-size: 36px; /* Tamaño más grande para el h2 */
+    margin: 40px 0 70px 0; /* Espacio debajo del h2 */
+    text-align: center; /* Alinear a la izquierda */
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; /* Asegurar que los elementos estén en columna */
+    margin-top: 100vh; /* Mueve el contenido principal debajo de la pantalla de inicio */
+}
+
+.container1 {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row; /* Asegurar que los elementos estén en fila */
+}
+.cont-libros {
+    display: flex;
+    margin: 50px;
+}
+a {
+    margin: 20px;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Estilos del botón de navegación */
+.nav-toggle {
+    background: none;
+    border: none;
+    color: #a3a3a3;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Ajusta esta propiedad para mover el botón más hacia la derecha */
+    display: ruby;
+}
+
+/* Estilos de la navegación */
+nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Ocultar el navbar fuera de la pantalla */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.639);
+    transition: right 0.3s ease;
+    z-index: 2;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0 20px 0 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: #bebcbc;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 52px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.titulo-1 {
+    font-size: 36px; /* Tamaño más grande para el h2 */
+    margin: 50px;
+    /* Espacio debajo del h2 */
+    text-align: left; /* Alinear a la izquierda */
+}
+
+/* Estilos del título de contacto */
+h2 {
+    font-size: 36px; /* Tamaño más grande para el h2 */
+    margin-bottom: 20px; /* Espacio debajo del h2 */
+    text-align: left; /* Alinear a la izquierda */
+    color: rgb(0, 0, 0);
+}
+
+.divcontacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; /* Espacio debajo del h2 */
+    text-align: center; /* Alinear el texto al centro */
+}
+
+.divcontacto h3 {
+    font-size: 36px; /* Tamaño más grande para el h3 */
+    margin-bottom: 20px; /* Espacio debajo del h3 */
+    text-align: center; /* Centrar el título */
+    width: 100%; /* Asegurar que el h3 ocupe todo el ancho del contenedor */
+}
+
+.parrafo-1 {
+    font-size: 20px; /* Tamaño más grande para el h2 */
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px; /* Espacio debajo del h2 */
+    text-align: left; /* Alinear a la izquierda */
+    display: flex;
+    align-items: center;
+}
+.parrafo-index {
+    font-size: 20px; /* Tamaño más grande para el h2 */
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 200px; /* Espacio debajo del h2 */
+    text-align: left; /* Alinear a la izquierda */
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos del formulario de contacto */
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Centrar el formulario horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar los elementos del formulario */
+}
+
+form ul {
+    margin: 16px 52px;
+    list-style: none;
+    padding: 0;
+    width: 100%; /* Asegurar que los elementos del formulario ocupen todo el ancho */
+    text-align: center; /* Centrar las listas dentro del formulario */
+}
+
+form ul li {
+    margin-bottom: 15px;
+    width: 100%; /* Asegurar que los elementos del formulario ocupen todo el ancho */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    
+}
+input, textarea:focus {
+    border-color: rgb(160, 160, 160);
+    outline: #a3a3a3;
+}
+
+
+#message {
+    height: 200px; /* Ajustar la altura del textarea */
+}
+
+textarea {
+    resize: none; /* Quitar la opción de modificar el tamaño del textarea */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #8b8b8b;
+    color: #ecececb9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+button:hover {
+    background-color: #9c9c9cb3;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: rgba(51, 51, 51, 0.564); /* Fondo semi-transparente */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0; /* Empuja el footer hacia la parte inferior */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5); /* Desenfoque en el borde superior */
+    width: 100%;
+    flex-shrink: 0; /* Evita que el footer se expanda */
+}
+.footer {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center; /* Asegurar que el texto esté centrado */
+    justify-content: center; /* Asegurar que los elementos estén centrados */
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links li {
+    margin-left: 20px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links li a:hover {
+    text-decoration: underline;
+}
+
+.img-presentacion {
+    width: 300px;
+    height: auto;
+    float: right;
+    margin: 20px; /* Alinear la imagen a la derecha */
+    border-radius: 10px;
+    max-width: 100%; /* Asegurar que la imagen no se salga del ancho de la página */
+    box-sizing: border-box; /* Incluir padding y border en el ancho y alto total */
+    opacity: 0.8; /* Opacidad del 80% */
+}
+
+.book {
+    text-align: center; /* Centrar el contenido */
+    margin-bottom: 20px; /* Espacio debajo del contenedor */
+}
+
+/* Estilos de la imagen del libro */
+.book-image {
+    width: 200px; /* Tamaño más pequeño para la imagen */
+    height: auto;
+    display: block; /* Asegura que la imagen sea un bloque */
+    margin: 0 auto 10px auto; /* Centrar la imagen y espacio debajo */
+    border-radius: 10px; /* Bordes redondeados */
+}
+.book-image-1 {
+    width: 300px; /* Tamaño más pequeño para la imagen */
+    height: auto;
+    display: block; /* Asegura que la imagen sea un bloque */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-left: 30px;
+    
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.image-container {
+    margin-right: 20px;
+}
+
+.text-container {
+    flex: 1;
+    margin-left: 50px;
+}
+
+/* Media Queries para diseño responsivo */
+@media (max-width: 768px) {
+    .container, .container1 {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .nav-toggle {
+        display: block; /* Mostrar el botón en pantallas pequeñas */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .img-presentacion {
+        width: 100%;
+        float: none;
+        margin: 20px 0;
+    }
+
+    .titulo-1, .parrafo-1, .divcontacto h3 {
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .text-container {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-1 {
+        font-size: 28px;
+        margin: 30px 0;
+    }
+
+    .parrafo-1 {
+        font-size: 18px;
+        margin: 20px 0;
+    }
+
+    .divcontacto h3 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .book-image {
+        width: 100px;
+    }
+    .container-footer {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+}
