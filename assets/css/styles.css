@@ -59,7 +59,6 @@ main {
 }
 
 .barras {
-   
     position: absolute;
     width: 600px;
     height: 3px;
@@ -67,8 +66,8 @@ main {
     justify-content: center;
     margin: 50 0;
     opacity: 0.5;
-   
 }
+
 .barras.barras-top {
     transform: translate(1.5%);
     animation: slideInFromRight 2s ease-in-out forwards; /* Animación para la barra superior */
@@ -79,7 +78,6 @@ main {
     animation: slideInFromLeft 2s ease-in-out forwards; /* Animación para la barra inferior */
 }
 
-
 .intro-title::before {
     left: -60px;
 }
@@ -89,7 +87,7 @@ main {
 }
 
 .intro-subtitle {
-    animation: fadeInSubtitle 2s ease-in-out 2s forwards; /* Animación para el subtítulo */; 
+    animation: fadeInSubtitle 2s ease-in-out 2s forwards; /* Animación para el subtítulo */ 
     font-size: 32px;
     margin: 80px 0 0 0;
     position: relative;
@@ -161,9 +159,7 @@ main {
         opacity: 1;
         visibility: visible; /* Asegura que el subtítulo permanezca visible después de la animación */
     }
-
 }
-
 
 /* Estilos del encabezado */
 .libros {
@@ -193,6 +189,8 @@ main {
 }
 .cont-libros {
     display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en múltiples líneas */
+    justify-content: center; /* Centrar los elementos dentro del contenedor */
     margin: 50px;
 }
 a {
@@ -259,7 +257,6 @@ nav ul li a {
     text-decoration: none;
     font-size: 16px;
     text-align: center;
-    
 }
 
 nav ul li a:hover {
@@ -361,13 +358,12 @@ input, textarea {
     border-radius: 5px;
     box-sizing: border-box;
     background-color: #f9f9f9;
-    
 }
+
 input, textarea:focus {
     border-color: rgb(160, 160, 160);
     outline: #a3a3a3;
 }
-
 
 #message {
     height: 200px; /* Ajustar la altura del textarea */
@@ -384,8 +380,8 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    
 }
+
 button:hover {
     background-color: #9c9c9cb3;
 }
@@ -475,7 +471,6 @@ footer {
     display: block; /* Asegura que la imagen sea un bloque */
     border-radius: 10px; /* Bordes redondeados */
     margin-left: 30px;
-    
 }
 
 .content {
@@ -528,6 +523,11 @@ footer {
     .text-container {
         margin-left: 0;
     }
+
+    .cont-libros {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -549,6 +549,12 @@ footer {
     .book-image {
         width: 100px;
     }
+
+    .cont-libros {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .container-footer {
         width: 100%;
         margin: 0 auto;
